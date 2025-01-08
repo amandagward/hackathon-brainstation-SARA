@@ -400,6 +400,29 @@ a {
   }
 }
 
+.widget {
+  display: none;
+}
+.widget__mobile {
+  display: block;
+}
+
+@media screen and (min-width: 768px) {
+  .widget__mobile {
+    display: none;
+  }
+  .widget__tablet {
+    display: block;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .widget__tablet {
+    display: none;
+  }
+  .widget__desktop {
+    display: block;
+  }
+}
 .shows {
   background-color: #FFFFFF;
   color: #323232;

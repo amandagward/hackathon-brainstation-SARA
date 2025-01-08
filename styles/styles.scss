@@ -72,6 +72,34 @@
     }
 }
 
+.widget {
+    display: none;
+
+    &__mobile {
+        display: block;
+    }
+}
+
+@include tablet {
+    &__mobile {
+        display: none;
+    }
+
+    &__tablet {
+        display: block;
+    }
+}
+
+@include desktop {
+    &__tablet {
+        display: none;
+    }
+
+    &__desktop {
+        display: block;
+    }
+}
+
 .shows {
     background-color: $color-white;
     color: $color-bandsite-black;
