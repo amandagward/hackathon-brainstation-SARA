@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/styles.scss">
-    <title>BANDSITE | Shows</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>OPEN WEATHER</title>
 </head>
 
 <body>
     <header class="header">
         <div class="header-wrapper">
             <a href="../index.html"><img class="header__logo" src="../assets/logos/Logo-bandsite.svg"
-                    alt="Brandsite logo"></a>
+                    alt="Open Weather logo"></a>
             <nav class="header__nav">
                 <ul class="header__nav-list">
                     <li class="header__item"><a href="../index.html" class="header__link">Biography</a></li>
@@ -35,6 +35,10 @@
         </div>
     </section>
 
+    <section class="search">
+        <h2>THIS IS WHERE A LOCATION SEARCH BAR WILL GO</h2>
+    </section>
+
 
     <main class="shows">
         <div class="shows-wrapper">
@@ -52,6 +56,69 @@
             </div>
         </div>
     </main>
+
+    <main class="about">
+        <div class="about-wrapper">
+            <h2 class="about__header">About the Musicians</h2>
+            <div class="about__content">
+                <div class="about__img-wrapper">
+                    <img class="about__img" src="assets/images/band.jpg" alt="crowd at a concert">
+                </div>
+
+                <div class="about__quote">
+                    <q class="about__quote-text">We push each other to be the best. It’s not uncommon for one of us to
+                        say ‘this needs to be better, back to the drawing board’</q>
+                    <p class="about__quote-author">- Lead vocalist of The Bees Knees</p>
+                </div>
+
+                <div class="about__bio">
+                    <h3 class="about__bio-header">The Bees Knees</h3>
+                    <div class="about__bio-text-wrapper">
+                        <p class="about__bio-text">The Bees Knees is a pop rock band originating from San Francisco,
+                            California. The band consists a dynamic lineup featuring two lead vocalists, two guitarists,
+                            a bassist, a keyboardist and a drummer. The band achieved its first commercial success as an
+                            unsigned act, drawing attention from their future manager. Having extensive experience
+                            working with both new and seasoned acts, the manager was confident the band could succeed
+                            even further with more support, pushing The Bees Knees to sign with a well known record
+                            label.</p>
+                        <p class="about__bio-text">From there, the band has soared, gaining international recognition
+                            and ranking in the top 10 on the Poster Charts. New fans immediately fell in love with the
+                            band’s original and organic attitude, solidifying their place as one of the hottest and
+                            fastest up and coming acts of this century. Fans affectionately refer to themselves as “The
+                            Hive” and are drawn to their candid and authentic performances on stage. The Bees Knees are
+                            currently recording their second studio album, looking to be released in early 2024.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <section class="gallery">
+        <div class="gallery-wrapper">
+            <h2 class="gallery__title">Photo Gallery</h2>
+            <div class="gallery__img-list">
+                <div class="gallery__img"><img src="assets/images/Photo-gallery-1.jpg"
+                        alt="crowd at a concert with pink stage lights"></div>
+                <div class="gallery__img"><img src="assets/images/Photo-gallery-2.jpg"
+                        alt="woman dancing under green and blue lights"></div>
+                <div class="gallery__img"><img src="assets/images/Photo-gallery-3.jpg"
+                        alt="concert crowd raising their hands under pink stage lighting"></div>
+                <div class="gallery__img"><img src="assets/images/Photo-gallery-4.jpg"
+                        alt="woman at a concert under white stage beams"></div>
+                <div class="gallery__img"><img src="assets/images/Photo-gallery-5.jpg"
+                        alt="concert with crowd under purple lighting"></div>
+                <div class="gallery__img"><img src="assets/images/Photo-gallery-9.jpg"
+                        alt="concert crowd with hands up, confetti falling under blue lighting"></div>
+                <div class="gallery__img"><img src="assets/images/Photo-gallery-7.jpg"
+                        alt="colorful concert with large crowd and lasers"></div>
+                <div class="gallery__img"><img src="assets/images/Photo-gallery-8.jpg"
+                        alt="dj's hands adjusting controls on a turntable"></div>
+                <div class="gallery__img"><img src="assets/images/Photo-gallery-6.jpg"
+                        alt="performer at a concert with white lights"></div>
+            </div>
+        </div>
+    </section>
 
 
     <footer class="footer">
@@ -99,7 +166,7 @@
             </div>
             <div class="footer__logo--mobile">
                 <a href="../index.html">
-                    <img class="footer__logo-img" src="../assets/logos/Logo-bandsite.svg" alt="Brandsite logo">
+                    <img class="footer__logo-img" src="../assets/logos/Logo-bandsite.svg" alt="Open Weather logo">
                 </a>
             </div>
 
@@ -107,7 +174,8 @@
         </div>
 
     </footer>
-    <script src="../scripts/build-shows-page.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/weather-api.js"></script>
 </body>
 
 </html>
