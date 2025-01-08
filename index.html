@@ -5,7 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <title>OPEN WEATHER</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="scripts/weather-api.js" defer></script>
+    <script src="/scripts/index.js" type="module"></script>
 </head>
 
 <body>
@@ -42,24 +47,21 @@
         </div>
     </section>
 
-    <section class="search">
-        <h2>THIS IS WHERE A LOCATION SEARCH BAR WILL GO</h2>
-    </section>
+    <form class="weather-form">
+        <label for="cityName">Enter City Name:</label>
+        <input name="cityName" type="text" required />
+        <button type="submit">Get Weather</button>
+    </form>
+    <div class="weather-display">
+        <!-- Weather data will be displayed here -->
+    </div>
 
 
-    <main class="shows">
-        <div class="shows-wrapper">
-            <h2 class="shows__title">Shows</h2>
-            <div class="shows__list-wrapper">
-                <div class="shows__subtitle-wrapper">
-                    <p class="shows__subtitle">Date</p>
-                    <p class="shows__subtitle">Venue</p>
-                    <p class="shows__subtitle">Location</p>
-                    <p class="shows__subtitle"></p>
-                </div>
-                <div id="shows__list">
-                    <!-- Use JS to populate -->
-                </div>
+    <main class="weather-forecast">
+        <div class="weather-forecast-wrapper">
+            <h2 class="weather-forecast__title">Weather in Cities</h2>
+            <div id="weather-forecast__list" class="weather-forecast__list">
+                <!-- Weather data will be inserted by JS -->
             </div>
         </div>
     </main>
@@ -177,8 +179,6 @@
         </div>
 
     </footer>
-    <script src="scripts/index.js"></script>
-    <script src="scripts/weather-api.js"></script>
 </body>
 
 </html>

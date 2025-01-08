@@ -1,3 +1,56 @@
+const weatherApi = new WeatherApi("27e0594eeb57baa5c4e60de906267828");
+
+// Select the form and the weather display container
+const weatherForm = document.querySelector(".weather-form");
+const weatherDisplay = document.querySelector(".weather-display");
+
+// Function to create a weather card
+function createWeatherCard(weather) {
+    const weatherCard = document.createElement("div");
+    const cityName = document.createElement("h2");
+    const temperature = document.createElement("p");
+    const description = document.createElement("p");
+
+    weatherCard.classList.add("weather-card");
+    cityName.classList.add("weather-card__city");
+    temperature.classList.add("weather-card__temp");
+    description.classList.add("weather-card__desc");
+
+    cityName.innerText = `City: ${weather.name}`;
+    temperature.innerText = `Temperature: ${weather.main.temp}°C`;
+    description.innerText = `Weather: ${weather.weather[0].description}`;
+
+    weatherCard.appendChild(cityName);
+    weatherCard.appendChild(temperature);
+    weatherCard.appendChild(description);
+
+    return weatherCard;
+}
+
+// Function to fetch and display weather data
+async function fetchAndRenderWeather(cityName) {
+    weatherDisplay.innerHTML = ""; // Clear existing weather data
+
+    try {
+        const weatherData = await weatherApi.getCurrentWeather(cityName);
+        const weatherCard = createWeatherCard(weatherData);
+        weatherDisplay.appendChild(weatherCard);
+    } catch (error) {
+        console.error("Error fetching weather data:", error);
+        weatherDisplay.innerText = "Failed to fetch weather data. Please try again.";
+    }
+}
+
+weatherForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const cityName = event.target.cityName.value;
+    fetchAndRenderWeather(cityName);
+});
+
+
+
+
+
 const showsList = [
     {
         date: "Mon Sept 09 2024",

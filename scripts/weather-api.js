@@ -14,17 +14,6 @@ class WeatherApi {
         }
     }
 
-    async getWeatherForecast(cityName) {
-        try {
-            const getForecastResponse = await axios.get(
-                `${this.baseUrl}forecast?appid=${this.apiKey}&q=${cityName}&units=metric`
-            );
-            return getForecastResponse.data;
-        } catch (error) {
-            console.error("An error occurred while fetching the weather forecast: " + error);
-        }
-    }
 }
 
 const weatherApi = new WeatherApi("27e0594eeb57baa5c4e60de906267828");
-
