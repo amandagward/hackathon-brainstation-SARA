@@ -1,0 +1,289 @@
+@use 'typography' as *;
+@use 'variables' as *;
+@use 'mixins' as *;
+
+* {
+    @include spacing(0, 0);
+    box-sizing: border-box;
+    font-family: 'Avenir Next LT Pro', sans-serif;
+    margin: 0;
+
+}
+
+img {
+    max-width: 100%;
+}
+
+ul,
+li {
+    list-style-type: none;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+}
+
+.header {
+    background-color: $color-bandsite-black;
+
+    &-wrapper {
+        @include flex-layout(flex, center, center);
+        flex-direction: column;
+        width: 100%;
+
+        @include tablet {
+            flex-direction: row;
+            padding: 0 2.25rem;
+        }
+
+        @include desktop {
+            @include spacing(0 auto, 0 8rem);
+            max-width: $desktop-breakpoint;
+        }
+    }
+
+    &__logo {
+        padding-top: 1rem;
+        max-width: 7.5rem;
+
+        @include tablet {
+            padding-top: 0;
+        }
+    }
+
+    &__nav {
+        width: 100%;
+
+        &-list {
+            @include flex-layout(flex, space-between, baseline);
+            width: 100%;
+
+            @include tablet {
+                width: 20rem;
+                padding: 0 5rem;
+            }
+        }
+    }
+
+    &__item {
+        width: 100%;
+        text-align: center;
+
+        @include tablet {
+            width: auto;
+        }
+    }
+
+    &__link {
+        @include font-style(.875rem, $weight-normal);
+        display: block;
+        padding: 0.5rem 0;
+        color: $color-mercury;
+
+        @include tablet {
+            padding: 1.5rem 0;
+        }
+
+        @include desktop {
+            padding: 2rem 0;
+        }
+
+        &--active {
+            color: $color-white;
+            border-bottom: $color-white solid 0.25rem;
+            font-weight: $weight-demi;
+        }
+
+        &:hover {
+            border-bottom: $color-white solid 0.25rem;
+            color: $color-white;
+        }
+    }
+}
+
+
+.hero {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+
+    &-wrapper {
+        @include desktop {
+            max-width: $desktop-breakpoint;
+            margin: 0 auto;
+        }
+    }
+
+    &__title {
+        @include font-style(1.5rem, $weight-demi);
+        padding: 5.1875rem 1rem;
+        text-align: left;
+        color: $color-white;
+
+        @include tablet {
+            @include font-style(3.75rem, $weight-demi);
+            padding: 12rem 2.25rem;
+        }
+
+        @include desktop {
+            padding: 17rem 8rem;
+        }
+
+        &-wrapper {
+            display: flex;
+            flex-direction: column;
+            color: $color-white;
+        }
+    }
+}
+
+.footer {
+    background-color: $color-bandsite-black;
+
+    &-wrapper {
+        color: $color-white;
+        padding: 1rem;
+        @include font-style(.8125rem);
+        @include flex-layout(flex, flex-start, flex-start);
+        flex-direction: column;
+
+        @include tablet {
+            padding: 2.25rem;
+            @include font-style(.875rem);
+        }
+
+        @include desktop {
+            @include spacing(0 auto, 2.25rem 8rem);
+            max-width: $desktop-breakpoint;
+        }
+    }
+
+    &__top {
+        @include tablet {
+            width: 100%;
+            @include flex-layout(row, space-between, baseline);
+            flex-wrap: nowrap;
+            padding-bottom: 2rem;
+        }
+
+        &-wrapper {
+            @include tablet {
+                @include flex-layout(flex, space-between, baseline);
+                gap: 2.3rem;
+            }
+        }
+    }
+
+    &__header {
+        @include font-style(1.5rem, $weight-demi);
+        padding-top: 1rem;
+
+        @include tablet {
+            @include font-style(2.25rem, $weight-demi);
+        }
+    }
+
+    &__social {
+        padding: 1rem 0;
+        @include flex-layout(flex, space-between, center);
+        width: 7.5rem;
+
+        @include tablet {
+            padding-bottom: 0;
+        }
+
+        &-icon {
+            height: 1.5rem;
+            width: auto;
+
+            &:hover {
+                opacity: 0.3;
+            }
+        }
+    }
+
+    &__contact {
+        @include flex-layout(flex, flex-start, flex-start);
+        flex-direction: column;
+
+        @include tablet {
+            flex-direction: row;
+            gap: 3.4rem;
+        }
+
+        .contact__item {
+            padding: 0.5rem 0;
+        }
+
+        .contact__name {
+            font-weight: 600;
+            padding-bottom: 1rem;
+
+            @include tablet {
+                padding-bottom: 0.5rem;
+            }
+        }
+
+        .contact__info {
+            padding-bottom: 0.5rem;
+            line-height: 1.25rem;
+
+            @include tablet {
+                padding: 1rem 0;
+            }
+        }
+
+        .contact__email {
+            color: $color-white;
+            padding: 0.5rem 0;
+
+            @include tablet {
+                padding-bottom: 1.5rem;
+            }
+        }
+    }
+
+    &__logo {
+        &--mobile {
+            padding-top: 0.5rem;
+
+            @include tablet {
+                display: none;
+            }
+        }
+
+        &--tablet-desktop {
+            display: none;
+
+            @include tablet {
+                display: contents;
+            }
+        }
+
+        &-img {
+            padding: 1.5rem 0 1rem;
+            max-width: 7.5rem;
+
+            @include tablet {
+                padding: 0;
+            }
+        }
+    }
+
+    &__copyright {
+        font-size: .75rem;
+        padding-bottom: 1rem;
+
+        @include tablet {
+            font-size: .875rem;
+            padding: 1.5rem 0;
+        }
+
+        @include desktop {
+            padding: 1rem 0;
+        }
+    }
+}
